@@ -37,7 +37,7 @@ function loadLearnerInTable(){
             <td>${apprennant.genre}</td>
             <td>${apprennant.github}</td>
             <td>
-                <button onclick="deleteLearner(this)" data-nom="${apprennant.nom}" data-postnom="${apprennant.postnom}" data-prenom="${apprennant.prenom}" data-pays="${apprennant.pays}" data-genre="${apprennant.genre}" data-githube="${apprennant.github}" class="btn btn-danger">Supprimmer</button>
+                <button onclick="deleteLearner(this)" data-nom="${apprennant.nom}" data-postnom="${apprennant.postnom}" data-prenom="${apprennant.prenom}" data-pays="${apprennant.pays}" data-genre="${apprennant.genre}" data-github="${apprennant.github}" class="btn btn-danger">Supprimmer</button>
                 <button data-nom="${apprennant.nom}" data-postnom="${apprennant.postnom}" data-prenom="${apprennant.prenom}" data-pays="${apprennant.pays}" data-genre="${apprennant.genre}" data-github="${apprennant.github}" onclick="editLearner(this)"  class="btn btn-info">Modifier</button>
             </td>
         </tr>`
@@ -72,7 +72,7 @@ form.addEventListener('submit', function(e){
        
     } else {
         if ((newnameValue=="")||(newfirstnameValue=="")||(newlastnameValue=="")||(newcountryValue=="")||(newgenderValue=="")||(newgitValue=="")){
-           alert("Remplissez tout les champs")
+           alert("Remplissez tout les champs svp!")
         } else{
             addLearner(newnameValue,newfirstnameValue,newlastnameValue,newcountryValue,newgenderValue,newgitValue)
 
@@ -142,9 +142,9 @@ function deleteLearner(e){
     'github':learnerDeletedgit 
     };
 
-   for (const learner of learners) {
+   for (const lrnr of learners) {
         if (learnertodelete.nom==lrnr.nom){
-            learners.splice(learners.indexOf(learner),1)
+            learners.splice(learners.indexOf(lrnr),1)
         }
 
         newname.value=''
@@ -174,7 +174,6 @@ function deleteLearner(e){
    
 }
 
-//ghjk
 
 function editLearner(e) {
     editModeEnabled(true)
